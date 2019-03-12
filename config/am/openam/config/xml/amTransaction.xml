@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright 2017 ForgeRock AS. All Rights Reserved
+  ~
+  ~ Use of this code requires a commercial software license with ForgeRock AS.
+  ~ or with one of its affiliates. All use shall be exclusively subject
+  ~ to such license between the licensee and ForgeRock AS.
+  -->
+<!DOCTYPE ServicesConfiguration
+        PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+<ServicesConfiguration>
+    <Service name="amTransactionService" version="1.0">
+        <Schema
+                serviceHierarchy="/DSAMEConfig/amTransactionService"
+                revisionNumber="1"
+                i18nFileName="amTransaction"
+                i18nKey="serviceDescription"
+                resourceName="transaction">
+            <Organization>
+                <AttributeSchema name="transactionTimeToLive"
+                                 type="single"
+                                 syntax="string"
+                                 resourceName="timeToLive"
+                                 i18nKey="transactionTimeToLive"
+                                 order="0">
+                    <DefaultValues>
+                        <Value>180</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+            </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>

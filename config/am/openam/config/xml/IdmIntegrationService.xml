@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ServicesConfiguration
+        PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+<!--
+  Copyright 2017-2018 ForgeRock AS. All Rights Reserved
+
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+
+<ServicesConfiguration>
+    <Service name="IdmIntegrationService" version="1.0">
+        <Schema
+                serviceHierarchy="/DSAMEConfig/IdmIntegrationService"
+                i18nFileName="IdmIntegrationService"
+                revisionNumber="1"
+                i18nKey="am.idm.integration.description"
+                resourceName="idm-integration">
+            <Organization>
+                <AttributeSchema name="enabled"
+                                 type="single"
+                                 syntax="boolean"
+                                 i18nKey="am.idm.integration.enabled"
+                                 order="2100"
+                                 validator="RequiredValueValidator">
+                    <BooleanValues>
+                        <BooleanTrueValue i18nKey="i18nTrue">true</BooleanTrueValue>
+                        <BooleanFalseValue i18nKey="i18nFalse">false</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>false</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="idmDeploymentUrl"
+                                 type="single"
+                                 syntax="string"
+                                 i18nKey="am.idm.integration.deploymentUrl"
+                                 order="2200"
+                                 validator="RequiredValueValidator">
+                    <ExampleValue>
+                        <Value>https://openidm.example.com</Value>
+                    </ExampleValue>
+                </AttributeSchema>
+                <AttributeSchema name="provisioningSigningKeyAlias"
+                                 type="single"
+                                 syntax="string"
+                                 i18nKey="am.idm.integration.provisioningSigningKeyAlias"
+                                 order="2240"
+                                 validator="RequiredValueValidator">
+                    <DefaultValues>
+                        <Value>openidm-selfservice-key</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="provisioningEncryptionKeyAlias"
+                                 type="single"
+                                 syntax="string"
+                                 i18nKey="am.idm.integration.provisioningEncryptionKeyAlias"
+                                 order="2250"
+                                 validator="RequiredValueValidator">
+                    <DefaultValues>
+                        <Value>selfservice</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="provisioningSigningAlgorithm"
+                                 type="single"
+                                 syntax="string"
+                                 i18nKey="am.idm.integration.provisioningSigningAlgorithm"
+                                 order="2260"
+                                 validator="RequiredValueValidator">
+                    <DefaultValues>
+                        <Value>HS256</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="jwtSigningCompatibilityMode"
+                                 type="single"
+                                 syntax="boolean"
+                                 i18nKey="am.idm.integration.jwtSigningCompatibilityMode"
+                                 order="2265">
+                    <BooleanValues>
+                        <BooleanTrueValue i18nKey="i18nTrue">true</BooleanTrueValue>
+                        <BooleanFalseValue i18nKey="i18nFalse">false</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>false</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="provisioningEncryptionAlgorithm"
+                                 type="single"
+                                 syntax="string"
+                                 i18nKey="am.idm.integration.provisioningEncryptionAlgorithm"
+                                 order="2270"
+                                 validator="RequiredValueValidator">
+                    <DefaultValues>
+                        <Value>RSAES_PKCS1_V1_5</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="provisioningEncryptionMethod"
+                                 type="single"
+                                 syntax="string"
+                                 i18nKey="am.idm.integration.provisioningEncryptionMethod"
+                                 order="2280"
+                                 validator="RequiredValueValidator">
+                    <DefaultValues>
+                        <Value>A128CBC_HS256</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+            </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>

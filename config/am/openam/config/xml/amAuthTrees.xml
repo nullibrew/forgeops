@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<!--
+  Copyright 2017-2018 ForgeRock AS. All Rights Reserved
+
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+
+<!DOCTYPE ServicesConfiguration
+        PUBLIC "=//forgerock//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+
+<ServicesConfiguration>
+    <Service name="authenticationTreesService" version="1.0">
+        <Schema
+                serviceHierarchy="/DSAMEConfig/authenticationTreesService"
+                i18nFileName="amAuthTrees"
+                revisionNumber="1"
+                i18nKey="serviceDescription"
+                resourceName="EMPTY">
+
+            <Organization>
+                <SubSchema name="tree" inheritance="multiple" resourceName="trees"
+                           validator="org.forgerock.openam.auth.nodes.framework.validators.TreeConfigValidator">
+                    <AttributeSchema name="NodeValueValidator" type="validator" syntax="string">
+                        <DefaultValues>
+                            <Value>org.forgerock.openam.auth.nodes.framework.validators.NodeValueValidator</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema name="entryNodeId" type="single" syntax="string" i18nKey="entryNodeId"/>
+                    <AttributeSchema name="nodes" type="single" syntax="json" i18nKey="nodes" validator="NodeValueValidator"/>
+                    <AttributeSchema name="staticNodes" type="single" syntax="json" i18nKey="staticNodes">
+                        <IsOptional/>
+                    </AttributeSchema>
+                </SubSchema>
+            </Organization>
+        </Schema>
+        <Configuration>
+            <OrganizationConfiguration name="/">
+            </OrganizationConfiguration>
+        </Configuration>
+    </Service>
+</ServicesConfiguration>

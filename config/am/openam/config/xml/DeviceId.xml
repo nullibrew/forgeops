@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ServicesConfiguration
+        PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+<!--
+  Copyright 2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+
+<ServicesConfiguration>
+<Service name="DeviceId" version="1.0">
+    <Schema
+        serviceHierarchy="/DSAMEConfig/DeviceIdService"
+        i18nFileName="DeviceIdService"
+        revisionNumber="1"
+        resourceName="deviceIdService"
+        i18nKey="forgerock-auth-device-id-service-description">
+        <Organization>
+
+            <AttributeSchema name="iplanet-am-auth-device-id-attr-name"
+                             type="single"
+                             i18nKey="a100"
+                             order="100"
+                             resourceName="deviceIdAttrName">
+                <DefaultValues>
+                    <Value>devicePrintProfiles</Value>
+                </DefaultValues>
+            </AttributeSchema>
+
+            <AttributeSchema name="openam-auth-device-id-device-settings-encryption-scheme"
+                type="single_choice"
+                i18nKey="a101"
+                order="200"
+                resourceName="deviceIdSettingsEncryptionScheme">
+                <ChoiceValues>
+                    <ChoiceValue i18nKey="RSAES_AES256CBC_HS512">RSAES_AES256CBC_HS512</ChoiceValue>
+                    <ChoiceValue i18nKey="RSAES_AES128CBC_HS256">RSAES_AES128CBC_HS256</ChoiceValue>
+                    <ChoiceValue i18nKey="None">NONE</ChoiceValue>
+                </ChoiceValues>
+                <DefaultValues>
+                    <Value>NONE</Value>
+                </DefaultValues>
+            </AttributeSchema>
+
+                <AttributeSchema name="openam-auth-device-id-device-settings-encryption-keystore"
+                    type="single"
+                    i18nKey="a102"
+                    order="300"
+                    resourceName="deviceIdSettingsEncryptionKeystore">
+                    <DefaultValues>
+                <Value>/home/forgerock/openam/am/keystore.jks</Value>
+            </DefaultValues>
+                </AttributeSchema>
+
+                <AttributeSchema name="openam-auth-device-id-device-settings-encryption-keystore-type"
+                    type="single_choice"
+                    i18nKey="a103"
+                    order="400"
+                    resourceName="deviceIdSettingsEncryptionKeystoreType">
+                    <ChoiceValues>
+                <ChoiceValue i18nKey="JKS">JKS</ChoiceValue>
+                <ChoiceValue i18nKey="JCEKS">JCEKS</ChoiceValue>
+                <ChoiceValue i18nKey="PKCS11">PKCS11</ChoiceValue>
+                <ChoiceValue i18nKey="PKCS12">PKCS12</ChoiceValue>
+            </ChoiceValues>
+                    <DefaultValues>
+                <Value>JKS</Value>
+            </DefaultValues>
+                </AttributeSchema>
+
+                <AttributeSchema name="openam-auth-device-id-device-settings-encryption-keystore-password"
+                    type="single"
+                    syntax="password"
+                    i18nKey="a104"
+                    order="500"
+                    resourceName="deviceIdSettingsEncryptionKeystorePassword">
+                    <IsOptional/>
+                    <DefaultValues>
+                        <Value>changeit</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+
+                <AttributeSchema name="openam-auth-device-id-device-settings-encryption-keypair-alias"
+                    type="single"
+                    i18nKey="a105"
+                    order="600"
+                    resourceName="deviceIdSettingsEncryptionKeystoreKeyPairAlias">
+                    <IsOptional/>
+                </AttributeSchema>
+
+                <AttributeSchema name="openam-auth-device-id-device-settings-encryption-privatekey-password"
+                    type="single"
+                    syntax="password"
+                    i18nKey="a106"
+                    order="700"
+                    resourceName="deviceIdSettingsEncryptionKeystorePrivateKeyPassword">
+                    <IsOptional/>
+                </AttributeSchema>
+
+            </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>

@@ -1,0 +1,36 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityRepositoryService",
+    "entityId" : "default/users/amAdmin",
+    "uid" : "ou=amAdmin,ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
+    "sunServiceID" : "user",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "sunIdentityMSISDNNumber" : null,
+    "userPassword" : null,
+    "telephoneNumber" : null,
+    "mail" : null,
+    "iplanet-am-user-alias-list" : null,
+    "givenName" : "amAdmin",
+    "_type" : {
+      "_id" : "sunIdentityRepositoryService",
+      "name" : "sunIdentityRepositoryService",
+      "collection" : false
+    },
+    "dn" : "uid=amAdmin,ou=people,",
+    "cn" : "amAdmin",
+    "employeeNumber" : null,
+    "postalAddress" : null,
+    "iplanet-am-user-success-url" : null,
+    "userPassword-encrypted" : "AAAAA0FFUwIQJ6WR6wXjZ/GAsOyhLwJc2GvIQOU9W11IzwjloH18eA//GvAVGrV5dIC+wFx/OrCQcNVNoAFv2Yl9ss71BTYB267ten4TEjD3zhga+ZPP+Qit75sjj2FGEYyxHVrS4mdGNMqdiMOJFSSkbX0IugRDcNP0IcPt528bXbnBHdz6VxLBDyZ5TfaiNbkN1+W97X5RYwdBDoDcdVR2RPlYydqjazEjPx9B9tKBqO7FrMzzQJ5/U9zJq3KFC04MY/d/H/iPNWFUVinv0fvlKyf92YuEMSmWqGC/1/2i",
+    "inetUserStatus" : "Active",
+    "_id" : "default/users/amAdmin",
+    "sn" : "amAdmin",
+    "iplanet-am-user-failure-url" : null
+  }
+}

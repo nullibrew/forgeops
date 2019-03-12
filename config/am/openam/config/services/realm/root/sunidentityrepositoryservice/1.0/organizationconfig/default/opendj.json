@@ -1,0 +1,32 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "sunIdentityRepositoryService",
+    "entityId" : "default/OpenDJ",
+    "uid" : "ou=OpenDJ,ou=default,ou=OrganizationConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
+    "sunServiceID" : "LDAPv3ForOpenDS",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "ldapsettings" : {
+      "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
+      "sun-idrepo-ldapv3-config-ldap-server" : [ "idrepo:1389" ],
+      "sun-idrepo-ldapv3-config-authpw" : null,
+      "sun-idrepo-ldapv3-config-authpw-encrypted" : "AAAAA0FFUwIQXgfD7TnvbGVdSPQ/LipIbC3kPq7rr8jFM6ifMe6mHittfG60Amyfnm6xlKbippc5HuqaHddLLeUUgza5VcD0VQ==",
+      "sun-idrepo-ldapv3-config-connection-mode" : "LDAP",
+      "sun-idrepo-ldapv3-config-authid" : "cn=Directory Manager"
+    },
+    "_type" : {
+      "_id" : "sunIdentityRepositoryService",
+      "name" : "sunIdentityRepositoryService",
+      "collection" : false
+    },
+    "_id" : "default/OpenDJ",
+    "persistentsearch" : {
+      "sun-idrepo-ldapv3-config-psearchbase" : "ou=identities"
+    }
+  }
+}

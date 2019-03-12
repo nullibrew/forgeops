@@ -42,28 +42,28 @@ spec:
                         - {{ .Values.component }}
                 topologyKey: {{ .Values.topologyKey }}
       {{- end }}
-      initContainers:
-      # The init containers below should be removed once file based configuration is in place.
-      - name: wait-for-configstore
-        image: {{ .Values.utilImage.repository }}:{{ .Values.utilImage.tag }}
-        imagePullPolicy: {{ .Values.utilImage.pullPolicy }}
-        args: [ "wait", "{{ .Values.configLdapHost }}", "{{ .Values.configLdapPort }}" ]
-      - name: bootstrap
-        image: {{ .Values.utilImage.repository }}:{{ .Values.utilImage.tag }}
-        imagePullPolicy: {{ .Values.utilImage.pullPolicy }}
-        env:
-        - name: BASE_DN
-          value: {{ .Values.rootSuffix }}
-        volumeMounts:
-        - name: openam-root
-          mountPath: /home/forgerock/openam
-        - name: openam-keys
-          mountPath: /var/run/secrets/openam
-        - name: openam-boot
-          mountPath: /var/run/openam
-        - name: configstore-secret
-          mountPath: /var/run/secrets/configstore
-        args:  ["bootstrap"]
+      # initContainers:
+      # # The init containers below should be removed once file based configuration is in place.
+      # - name: wait-for-configstore
+      #   image: {{ .Values.utilImage.repository }}:{{ .Values.utilImage.tag }}
+      #   imagePullPolicy: {{ .Values.utilImage.pullPolicy }}
+      #   args: [ "wait", "{{ .Values.configLdapHost }}", "{{ .Values.configLdapPort }}" ]
+      # - name: bootstrap
+      #   image: {{ .Values.utilImage.repository }}:{{ .Values.utilImage.tag }}
+      #   imagePullPolicy: {{ .Values.utilImage.pullPolicy }}
+      #   env:
+      #   - name: BASE_DN
+      #     value: {{ .Values.rootSuffix }}
+      #   volumeMounts:
+      #   - name: openam-root
+      #     mountPath: /home/forgerock/openam
+      #   - name: openam-keys
+      #     mountPath: /var/run/secrets/openam
+      #   - name: openam-boot
+      #     mountPath: /var/run/openam
+      #   - name: configstore-secret
+      #     mountPath: /var/run/secrets/configstore
+      #   args:  ["bootstrap"]
       containers:
       - name: openam
         image: {{ .Values.image }}
@@ -72,8 +72,6 @@ spec:
         - containerPort: 8080
           name: http
         volumeMounts:
-        - name: openam-root
-          mountPath: /home/forgerock/openam
         - name: configstore-secret
           mountPath: /var/run/secrets/configstore
         - name: openam-keys
@@ -106,8 +104,6 @@ spec:
           timeoutSeconds: {{ .Values.livenessTimeout }}
           periodSeconds: {{ .Values.livenessPeriod }}
       volumes:
-      - name: openam-root
-        emptyDir: {}
       - name: openam-keys
         secret:
           secretName: {{ default "openam-keys" .Values.existingSecrets.openamKeys }}

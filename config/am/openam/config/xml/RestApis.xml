@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<!--
+  Copyright 2014-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+
+<!DOCTYPE ServicesConfiguration
+        PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+        "jar://com/sun/identity/sm/sms.dtd">
+
+<ServicesConfiguration>
+    <Service name="RestApisService" version="1.0">
+        <Schema
+                serviceHierarchy="/DSAMEConfig/RestApisService"
+                i18nFileName="RestApis"
+                i18nKey="openam-rest-apis-service-description"
+                revisionNumber="1"
+                resourceName="rest">
+
+            <Global>
+                <AttributeSchema name="openam-rest-apis-default-version"
+                                 type="single_choice"
+                                 listOrder="insertion"
+                                 syntax="string"
+                                 any="display"
+                                 resourceName="defaultVersion"
+                                 i18nKey="a101"
+                                 order="100">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="a101a">Latest</ChoiceValue>
+                        <ChoiceValue i18nKey="a101b">Oldest</ChoiceValue>
+                        <ChoiceValue i18nKey="a101c">None</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>Latest</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="openam-rest-apis-default-protocol"
+                                 type="single_choice"
+                                 listOrder="insertion"
+                                 syntax="string"
+                                 any="display"
+                                 resourceName="defaultProtocolVersion"
+                                 i18nKey="a104"
+                                 order="400">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="a104a">Oldest</ChoiceValue>
+                        <ChoiceValue i18nKey="a104b">Latest</ChoiceValue>
+                        <ChoiceValue i18nKey="a104c">None</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>Latest</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="openam-rest-apis-header-warning"
+                                 type="single"
+                                 syntax="boolean"
+                                 any="display"
+                                 resourceName="warningHeader"
+                                 i18nKey="a102"
+                                 order="200">
+                    <BooleanValues>
+                        <BooleanTrueValue i18nKey="a102a">Enabled</BooleanTrueValue>
+                        <BooleanFalseValue i18nKey="a102b">Disabled</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>Enabled</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="openam-rest-apis-descriptions-state"
+                                 type="single_choice"
+                                 syntax="string"
+                                 resourceName="descriptionsState"
+                                 i18nKey="a103"
+                                 order="300">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="a103a">DYNAMIC</ChoiceValue>
+                        <ChoiceValue i18nKey="a103b">STATIC</ChoiceValue>
+                        <ChoiceValue i18nKey="a103c">DISABLED</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>STATIC</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+
+                <AttributeSchema name="csrfFilterEnabled"
+                                 type="single"
+                                 syntax="boolean"
+                                 i18nKey="a105"
+                                 order="500">
+                    <BooleanValues>
+                        <BooleanTrueValue i18nKey="a102a">true</BooleanTrueValue>
+                        <BooleanFalseValue i18nKey="a102b">false</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>true</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+            </Global>
+        </Schema>
+    </Service>
+</ServicesConfiguration>
+

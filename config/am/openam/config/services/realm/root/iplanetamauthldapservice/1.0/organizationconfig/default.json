@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMAuthLDAPService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_type" : {
+      "_id" : "iPlanetAMAuthLDAPService",
+      "name" : "iPlanetAMAuthLDAPService",
+      "collection" : false
+    },
+    "_id" : "default",
+    "userBindPassword-encrypted" : "AAAAA0FFUwIQKSTOKYw6O3L33m5SLZIL8NNXK++Hly/xp6j1tvsj/T8/Qmgc7XM5lDXWoBPRaBjg7wLubMgLCH1Ul85B2WwmuQ==",
+    "userBindPassword" : null
+  }
+}

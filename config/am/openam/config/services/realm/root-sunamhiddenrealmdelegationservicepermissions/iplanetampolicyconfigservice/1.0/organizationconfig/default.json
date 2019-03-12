@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
+    "amsterVersion" : "7.0.0-SNAPSHOT",
+    "entityType" : "iPlanetAMPolicyConfigService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "bindDn" : "cn=Directory Manager",
+    "bindPassword" : null,
+    "_type" : {
+      "_id" : "iPlanetAMPolicyConfigService",
+      "name" : "iPlanetAMPolicyConfigService",
+      "collection" : false
+    },
+    "_id" : "default",
+    "bindPassword-encrypted" : "AAAAA0FFUwIQQq0BmiRYPqmbP0efyuJr2uEMjAOuHFpP7UrFuFK6S9O7PzJGiLkCChYMNv4FiN3/0Yb/dBIVEcTY7V8GIXdHBQ=="
+  }
+}
