@@ -1,5 +1,8 @@
 #FROM forgerock-docker-public.bintray.io/forgerock/am:7.0.0-SNAPSHOT
 # todo - replace with FBC
+
+#FROM gcr.io/forgerock-io/am:7.0.0
+# This is an experimental FBC image
 FROM gcr.io/engineering-devops/am:7.0-FBC-test
 
 # This is where you would copy in custom web.xml, add jar files, javascript, etc.

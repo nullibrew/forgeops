@@ -212,7 +212,7 @@
                                  validator="Base64Validator"
                                  resourceName="sharedSecret">
                     <DefaultValues>
-                        <Value>Y+rAs2dwdbcHjZihxA9PXoKjtytB1Siv4c/5bMAvk3Y=</Value>
+                        <Value>t9VL/AtBqMJ3bZcvBU7XAZbBYKA1e6MtUrR2eZEtMSI=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="iplanet-am-auth-default-role"

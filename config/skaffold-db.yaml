@@ -13,7 +13,7 @@ deploy:
       chartPath: ../helm/ds
       setValues:
         instance: idrepo
-    - name: configstore
-      chartPath: ../helm/ds
-      setValues:
-        instance: configstore
+    - name: frconfig
+      chartPath: ../helm/frconfig
+      valuesFiles:
+      - helm-common.yaml

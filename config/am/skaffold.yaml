@@ -12,5 +12,7 @@ deploy:
       chartPath: ../../helm/am
       values:
         image: gcr.io/engineering-devops/sk-am
+      setValues:
+        devMode: true
       valuesFiles:
       - ../helm-common.yaml

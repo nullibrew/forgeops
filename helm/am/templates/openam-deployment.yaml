@@ -78,6 +78,10 @@ spec:
           mountPath: /var/run/secrets/openam/keystore
         - name: openam-keystore-passwords
           mountPath: /var/run/secrets/openam/password
+        {{ if .Values.devMode }}
+        - name: am-config
+          mountPath: /home/forgerock/openam
+        {{ end }}
         envFrom:
         - configMapRef:
             name: am-configmap
@@ -115,4 +119,9 @@ spec:
           name: boot-json
       - name: configstore-secret
         secret:
-          secretName: configstore  
+          secretName: idrepo
+      {{ if .Values.devMode }}
+      - name: am-config
+        hostPath:
+          path: /openam
+      {{ end }}

@@ -18,6 +18,6 @@
       "collection" : false
     },
     "_id" : "default/com-sun-identity-sites/site1/accesspoint",
-    "primary-url" : "https://default.iam.example.com"
+    "primary-url" : "https://default.iam.example.com/am"
   }
 }

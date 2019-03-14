@@ -14,3 +14,4 @@ deploy:
         image: gcr.io/engineering-devops/sk-amster
       valuesFiles:
       - ../helm-common.yaml
+    

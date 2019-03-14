@@ -242,7 +242,7 @@
                                  i18nKey="a125"
                                  order="2000">
                     <DefaultValues>
-                        <Value>njq3diEXReqxxsIYp7Hxp4/b83d2bZ0yKwwEuHmcN8M=</Value>
+                        <Value>zQbI/MLSSSHIBOABCBdRBlfQcu30Tpm9/3sMIGcc1s0=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="openam-session-stateless-signing-rsa-certificate-alias"
@@ -290,7 +290,7 @@
                                  order="2400"
                                  validator="Base64Validator">
                     <DefaultValues>
-                        <Value>njq3diEXReqxxsIYp7Hxp4/b83d2bZ0yKwwEuHmcN8M=</Value>
+                        <Value>zQbI/MLSSSHIBOABCBdRBlfQcu30Tpm9/3sMIGcc1s0=</Value>
                     </DefaultValues>
                 </AttributeSchema>
                 <AttributeSchema name="openam-session-stateless-compression-type"

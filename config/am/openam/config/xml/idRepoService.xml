@@ -313,7 +313,7 @@
                         i18nKey="a2000"
                         order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -976,7 +976,7 @@
                         i18nKey="a2000"
                         order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -1764,7 +1764,7 @@
                         i18nKey="a2000"
                         order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -2423,7 +2423,7 @@
                                      i18nKey="a2000"
                                      order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -3082,7 +3082,7 @@
                         i18nKey="a2000"
                         order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -3715,7 +3715,7 @@
                         i18nKey="a2000"
                         order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -4325,7 +4325,7 @@
                         i18nKey="a2000"
                         order="600">
                         <DefaultValues>
-                            <Value>[0]=configstore:1389</Value>
+                            <Value>[0]=idrepo:1389</Value>
                         </DefaultValues>
                     </AttributeSchema>
 
@@ -4937,7 +4937,7 @@
                         id="user">
                         <AttributeValuePair>
                             <Attribute name="userPassword" />
-                            <Value>{SSHA-512}FPtE8uydek7qId3tSRs6hOdZRF4KSWNtrqEn1jF4UaOFd77aK4fexH60K02jHR3KDCFs9iwGlHpmPdIbvHkt1ZFr4wU5FCQcrb3pId3Ink0h+GCSVw==</Value>
+                            <Value>{SSHA-512}FLQRZpW8bN9a8n8/LJ0Kz+eBBck1S49vvJCpH3Y6JLr8aFkV2WwzYIxB3O5yH2v4aU6pTi7uYB+F6hFa0mzHWzBWhGVSHX6rMzogJaWOS2PXUeAnLw==</Value>
                         </AttributeValuePair>
                         <AttributeValuePair>
                             <Attribute name="inetUserStatus" />
@@ -4996,7 +4996,7 @@
                         id="user">
                         <AttributeValuePair>
                             <Attribute name="userPassword" />
-                            <Value>{SSHA-512}FPtE8uydek7qId3tSRs6hOdZRF4KSWNtrqEn1jF4UaOFd77aK4fexH60K02jHR3KDCFs9iwGlHpmPdIbvHkt1ZFr4wU5FCQcrb3pId3Ink0h+GCSVw==</Value>
+                            <Value>{SSHA-512}FLQRZpW8bN9a8n8/LJ0Kz+eBBck1S49vvJCpH3Y6JLr8aFkV2WwzYIxB3O5yH2v4aU6pTi7uYB+F6hFa0mzHWzBWhGVSHX6rMzogJaWOS2PXUeAnLw==</Value>
                         </AttributeValuePair>
                        <AttributeValuePair>
                             <Attribute name="inetUserStatus" />

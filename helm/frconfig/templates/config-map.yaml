@@ -1,13 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.config.name }}
-  # annotations:
-  #   "helm.sh/resource-policy": keep
+  name: platform-config
 data:
-  GIT_REPO: "{{ .Values.git.repo }}"
-  GIT_AUTOSAVE_BRANCH:  autosave-{{ .Release.Namespace }}
-  GIT_CHECKOUT_BRANCH:  {{ .Values.git.branch }}
-
-  # NAMESPACE: {{ .Release.Namespace }}  -- defined as downward API
+  FQDN: {{ .Release.Namespace }}.{{.Values.subdomain }}.{{ .Values.domain }}
   DOMAIN: {{ default ".forgeops.com" .Values.domain }}
+  # This is often better defined using the downward API.
+  NAMESPACE: {{ .Release.Namespace }}
+  
+ 

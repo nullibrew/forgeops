@@ -23,14 +23,14 @@ deploy:
     #   install:
     #   - "values: helm-common.yaml"
     releases:
-    - name: userstore
+    - name: frconfig
+      chartPath: ../helm/frconfig
+      valuesFiles:
+      - helm-common.yaml
+    - name: idrepo
       chartPath: ../helm/ds
       setValues:
-        instance: userstore
-    - name: configstore
-      chartPath: ../helm/ds
-      setValues:
-        instance: configstore
+        instance: idrepo
     - name: ig
       chartPath: ../helm/ig
       values:
