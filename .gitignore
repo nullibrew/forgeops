@@ -22,3 +22,5 @@ etc/cert-manager.json
 /cicd/forgeops-tests/res.txt
 /cicd/forgeops-tests/results.txt
 /venv/
+debug/
+log/
