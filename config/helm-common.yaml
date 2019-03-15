@@ -1,9 +1,9 @@
 # Warning: With file based config, domain and fqdn are embedded in the configuration
-# Changing this top level variable might not change the config
+# Changing this top level variable will not change the config
 # TODO: Investigate how we update domain, etc. in FBC
 domain: example.com
 
-# Used by the idm helm chart - sets the boot.properties to point at the ds repo.
+# Used by the idm helm chart - sets the boot.properties to point at the ds ridepo.
 openidm:
   repo:
     host: idrepo

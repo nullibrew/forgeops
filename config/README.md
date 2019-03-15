@@ -2,8 +2,22 @@
 
 This is a work in progress, and is not complete. For the 7.0.0 release, this folder will contain one or more platform samples.
 
+## Note
 
-# Skaffold 
+The all in one skaffold.yaml is not ready yet. There are still too many issues with AM file based configuration that need to be sorted out. 
+
+For now, use the individual skaffold.yaml files that are found in each product folder.  The general idea is to 
+`skaffold run` those components that are stable (i.e. you are not iterating on the configuration) and use
+`skaffold dev` on the component you want to develop with. 
+
+See the am/README.md - there are special considerations for setting up file based config.
+
+The skaffold-db.yaml is used to run the iderepo instance. This will be a compoment that you want to keep around 
+so you dont need to reconfigure the directory.  Running `skaffold delete` on it will preserve the PVC - so you
+can `skaffold run -f skaffold-db.yaml` again to get the directory back up.
+
+
+## Skaffold 
 
 [skaffold](https://skaffold-latest.firebaseapp.com/) is used to provide an iterative development workflow, and also for final runtime deployment using continous delivery tools.
 
