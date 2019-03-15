@@ -1,0 +1,808 @@
+--
+-- DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+--
+-- Copyright (c) 2002-2010 Sun Microsystems Inc. All Rights Reserved
+--
+-- The contents of this file are subject to the terms
+-- of the Common Development and Distribution License
+-- (the License). You may not use this file except in
+-- compliance with the License.
+--
+-- You can obtain a copy of the License at
+-- https://opensso.dev.java.net/public/CDDLv1.0.html or
+-- opensso/legal/CDDLv1.0.txt
+-- See the License for the specific language governing
+-- permission and limitations under the License.
+--
+-- When distributing Covered Code, include this CDDL
+-- Header Notice in each file and include the License file
+-- at opensso/legal/CDDLv1.0.txt.
+-- If applicable, add the following below the CDDL Header,
+-- with the fields enclosed by brackets [] replaced by
+-- your own identifying information:
+-- "Portions Copyrighted [year] [name of copyright owner]"
+--
+-- Portions Copyrighted 2010-2018 ForgeRock AS.
+--
+
+dn: CN=preferredLocale,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: preferredLocale
+adminDescription: preferred locale for a person
+attributeID: 1.3.6.1.4.1.1466.101.120.42
+attributeSyntax: 2.5.5.5
+cn: preferredLocale
+instanceType: 4
+isSingleValued: TRUE
+lDAPDisplayName: preferredLocale
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: Lll3FWzgokehgTdDxY/8IA==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=preferredTimeZone,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: preferredTimeZone
+adminDescription: preferred time zone for a person
+attributeID: 1.3.6.1.4.1.1466.101.120.43
+attributeSyntax: 2.5.5.5
+cn: preferredTimeZone
+instanceType: 4
+isSingleValued: TRUE
+lDAPDisplayName: preferredTimeZone
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: j7ogzX9XN0SnVoboIiKcNA==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-service-status,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-service-status
+adminDescription: Session Service Status
+attributeID: 2.16.840.1.113730.3.1.1053
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-service-status
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-service-status
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: kuytW+k3ckmBsnB1UFrHGg==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-max-session-time,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-max-session-time 
+adminDescription: Max Service Time
+attributeID: 2.16.840.1.113730.3.1.1065
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-max-session-time
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-max-session-time
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: KCM6flBj5kKw55wQlTKhow==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-max-idle-time,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-max-idle-time
+adminDescription: Max Session Idle Time
+attributeID: 2.16.840.1.113730.3.1.1066
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-max-idle-time
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-max-idle-time
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: zjc0GXlhFk2ISSyNKnV09g==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-max-caching-time,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-max-caching-time
+adminDescription: Max Session Caching Time
+attributeID: 2.16.840.1.113730.3.1.1067
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-max-caching-time
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-max-caching-time
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: CRYxeV4pn0O44/lYbOHDvQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-quota-limit,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-quota-limit
+adminDescription: Session Quota Constraints
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.752
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-quota-limit
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-quota-limit
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: qJK2mJwCFUanjq5M0vSIqQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-get-valid-sessions,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-get-valid-sessions
+adminDescription: Get Valid Sessions
+attributeID: 2.16.840.1.113730.3.1.1068
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-get-valid-sessions
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-get-valid-sessions
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: igIOsUPDU0iFQWnFFWKWKA==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-session-destroy-sessions,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-destroy-sessions
+adminDescription: Destroy Session
+attributeID: 2.16.840.1.113730.3.1.1069
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-session-destroy-sessions
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-session-destroy-sessions
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: DBESFSKYTEyK80Ejrt4l4Q==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=iPlanetPreferences,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iPlanetPreferences
+adminDescription: Object Class to user preference attributes
+cn: iPlanetPreferences
+governsID: 1.3.6.1.4.1.1466.101.120.142
+instanceType: 4
+lDAPDisplayName: iPlanetPreferences
+mayContain: preferredLanguage
+mayContain: preferredLocale
+mayContain: preferredTimeZone
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: 2gAak4WaXE61WRsvwHC1sA==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: iPlanetPreferences
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+
+dn: CN=iplanet-am-session-service,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-session-service 
+adminDescription: Object Class to session service attributes
+cn: iplanet-am-session-service
+governsID: 2.16.840.1.113730.3.2.175
+instanceType: 4
+lDAPDisplayName: iplanet-am-session-service
+mayContain: iplanet-am-session-max-session-time
+mayContain: iplanet-am-session-max-idle-time
+mayContain: iplanet-am-session-max-caching-time
+mayContain: iplanet-am-session-quota-limit
+mayContain: iplanet-am-session-get-valid-sessions
+mayContain: iplanet-am-session-destroy-sessions
+mayContain: iplanet-am-session-service-status
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: DjmZYAYkCU6yaIPNjYlOTQ==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: iplanet-am-session-service
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+
+dn: CN= sunAMAuthInvalidAttemptsData,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: sunAMAuthInvalidAttemptsData
+adminDescription: XML data for Invalid Login Attempts
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.793
+attributeSyntax: 2.5.5.5
+cn: sunAMAuthInvalidAttemptsData
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: sunAMAuthInvalidAttemptsData
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+oMSyntax: 22
+schemaIDGUID:: 48JTyUzec0C9TNGQu4udvA==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=sunAMAuthAccountLockout,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: sunAMAuthAccountLockout
+adminDescription: Invalid Login Attempts
+cn: sunAMAuthAccountLockout
+governsID: 1.3.6.1.4.1.42.2.27.9.2.118
+instanceType: 4
+lDAPDisplayName: sunAMAuthAccountLockout
+mayContain: sunAMAuthInvalidAttemptsData
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: pE6gutXoKE6J8W32JXBsxg==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: sunAMAuthAccountLockout
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN= iplanet-am-auth-configuration,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-auth-configuration
+adminDescription: Authentication Configuration
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.62
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-auth-configuration
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-auth-configuration
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: I3QTAh1B502SKzoGVkt7Hw==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-auth-login-success-url,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-auth-login-success-url
+adminDescription: Redirection URL After Successful Login
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.63
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-auth-login-success-url
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-auth-login-success-url
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: U9BeajlWwkelhjHlYRVTmg==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=oath2faEnabled,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: oath2faEnabled
+adminDescription: Indicator for enabling of OATH 2FA
+attributeID: 1.3.6.1.4.1.36733.2.2.1.131
+attributeSyntax: 2.5.5.9
+cn: oath2faEnabled
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: oath2faEnabled
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: nbMoMMtlAEy+64sW1Tg94Q==
+oMSyntax: 2
+systemOnly: FALSE
+
+dn: CN=push2faEnabled,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+changetype: add
+adminDisplayName: push2faEnabled
+adminDescription: Indicator for enabling of Push 2FA
+attributeID: 1.3.6.1.4.1.36733.2.2.1.140
+attributeSyntax: 2.5.5.9
+cn: push2faEnabled
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: push2faEnabled
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+objectClass: attributeSchema
+schemaIDGUID:: b53UXi88wkuI7UvRxIjpIw==
+oMSyntax: 2
+systemOnly: FALSE
+
+dn: CN= iplanet-am-auth-login-failure-url,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-auth-login-failure-url
+adminDescription: Redirection URL for Failed User Authentication
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.64
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-auth-login-failure-url
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-auth-login-failure-url
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: mf5wTilOS02PjsUTzgSbGQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN= iplanet-am-auth-post-login-process-class,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-auth-post-login-process-class
+adminDescription: Class Name for Post Authentication Processing
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.65
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-auth-post-login-process-class
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-auth-post-login-process-class
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: ljz3xNRzM0yK/b2acXejeQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=iplanet-am-auth-configuration-service,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-auth-configuration-service
+adminDescription: Authentication Configuration Service 
+cn: iplanet-am-auth-configuration-service
+governsID: 1.3.6.1.4.1.42.2.27.9.2.23
+instanceType: 4
+lDAPDisplayName: iplanet-am-auth-configuration-service
+mayContain: iplanet-am-auth-configuration
+mayContain: iplanet-am-auth-login-success-url
+mayContain: iplanet-am-auth-login-failure-url
+mayContain: iplanet-am-auth-post-login-process-class
+mayContain: oath2faEnabled
+mayContain: push2faEnabled
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: K57qHRzD20uEi40GJ7EvTQ==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: iplanet-am-auth-configuration-service
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=iplanet-am-user-auth-modules,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-auth-modules
+adminDescription: User Auth Modules
+attributeID: 2.16.840.1.113730.3.1.1071
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-auth-modules
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-auth-modules
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: 7BYsncFEQUyB0vK5+8yClQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-admin-start-dn,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-admin-start-dn
+adminDescription: Starting DN for Admin User
+attributeID: 2.16.840.1.113730.3.1.1072
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-admin-start-dn
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-admin-start-dn
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: Jw/3RHRRjkS7Z3Dcib5q+Q==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-login-status,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-login-status
+adminDescription: User Login Status
+attributeID: 2.16.840.1.113730.3.1.1074
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-login-status
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-login-status
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: opeFNl8jMUa3MNDbuZi+bw==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-account-life,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-account-life
+adminDescription: User Account Life
+attributeID: 2.16.840.1.113730.3.1.976
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-account-life
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-account-life
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: /GzB8Jfm30G460zYrJnkpg==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-auth-config,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-auth-config
+adminDescription: User Authentication Configuration
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.58
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-auth-config
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-auth-config
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: 4eb0CqMPwUSJ0XGpRDfQfQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-alias-list,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-alias-list
+adminDescription: User Alias Names List
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.59
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-alias-list
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-alias-list
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: FXHVuQnMd0GLtZ/9gBbj+w==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-success-url,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-success-url
+adminDescription: Redirection URL for Successful User Authentication
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.71
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-success-url
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-success-url
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: ow/CI+Eh3ECUDbcNx7nTuA==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-failure-url,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-failure-url
+adminDescription: Redirection URL for Failed User Authentication
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.72
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-failure-url
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-failure-url
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: LXokU0i8O0C1L78cRdfe3Q==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-password-reset-options,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-password-reset-options
+adminDescription: Password Reset Options
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.589
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-password-reset-options
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-password-reset-options
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: 37Z24v+UF0mhsIVry63SJA==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-password-reset-question-answer,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-password-reset-question-answer
+adminDescription: Password Reset User Question Answer
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.590
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-password-reset-question-answer
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-password-reset-question-answer
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: Fg2JbuRHfUCvKF8eQpQYAQ==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=iplanet-am-user-password-reset-force-reset,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-password-reset-force-reset
+adminDescription: Password Reset Force Reset password
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.591
+attributeSyntax: 2.5.5.5
+cn: iplanet-am-user-password-reset-force-reset
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: iplanet-am-user-password-reset-force-reset
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: gFAVtPazr0ebxt0xkqYOjw==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn: CN=sunIdentityMSISDNNumber,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: sunIdentityMSISDNNumber
+adminDescription: User MSISDN Number
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.823
+attributeSyntax: 2.5.5.5
+cn: sunIdentityMSISDNNumber
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: sunIdentityMSISDNNumber
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: az003bcfPUmeqYYgtwbdUA==
+oMSyntax: 22
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=iplanet-am-user-service,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-user-service
+adminDescription: User Service OC
+cn: iplanet-am-user-service
+governsID: 2.16.840.1.113730.3.2.176
+instanceType: 4
+lDAPDisplayName: iplanet-am-user-service
+mayContain: iplanet-am-user-auth-modules
+mayContain: iplanet-am-user-login-status
+mayContain: iplanet-am-user-admin-start-dn
+mayContain: iplanet-am-user-auth-config
+mayContain: iplanet-am-user-alias-list
+mayContain: iplanet-am-user-success-url
+mayContain: iplanet-am-user-failure-url
+mayContain: iplanet-am-user-password-reset-options
+mayContain: iplanet-am-user-password-reset-question-answer
+mayContain: iplanet-am-user-password-reset-force-reset
+mayContain: sunIdentityMSISDNNumber
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: 0BIIzPAI00+dsDeVBjazwQ==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: iplanet-am-user-service
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=iplanet-am-managed-person,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: iplanet-am-managed-person
+adminDescription: Object Class to managed person
+cn: iplanet-am-managed-person
+governsID: 2.16.840.1.113730.3.2.184
+instanceType: 4
+lDAPDisplayName: iplanet-am-managed-person
+mayContain: iplanet-am-user-account-life
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+schemaIDGUID:: wHasUz55CUKg++8DcZ/u3w==
+subClassOf: top
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: iplanet-am-managed-person
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=sun-fm-saml2-nameid-info,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: sun-fm-saml2-nameid-info
+adminDescription: Attribute to store SAML 2.0 name identifier information
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.990
+attributeSyntax: 2.5.5.3
+cn: sun-fm-saml2-nameid-info
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: sun-fm-saml2-nameid-info
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: 238t8KMH1k+kpLe2+TL46g==
+oMSyntax: 27
+systemOnly: FALSE
+
+dn: CN=sun-fm-saml2-nameid-infokey,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: sun-fm-saml2-nameid-infokey
+adminDescription: Attribute to store SAML2.0 name identifier info key
+attributeID: 1.3.6.1.4.1.42.2.27.9.1.989
+attributeSyntax: 2.5.5.3
+cn: sun-fm-saml2-nameid-infokey
+instanceType: 4
+isSingleValued: FALSE
+lDAPDisplayName: sun-fm-saml2-nameid-infokey
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: attributeSchema
+schemaIDGUID:: rxSSaDGM1E26OyMoDhfqoA==
+oMSyntax: 27
+searchFlags: 1
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=sunFMSAML2NameIdentifier,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: add
+adminDisplayName: sunFMSAML2NameIdentifier
+adminDescription: Object Class to store SAML 2.0 Name Identifier attributes
+cn: sunFMSAML2NameIdentifier
+governsID: 1.3.6.1.4.1.42.2.27.9.2.148
+instanceType: 4
+lDAPDisplayName: sunFMSAML2NameIdentifier
+mayContain: sun-fm-saml2-nameid-info
+mayContain: sun-fm-saml2-nameid-infokey
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: gu3EfdIRn0KAT/cwzqUnZQ==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,CN=@INSTANCE_GUID@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: sunFMSAML2NameIdentifier
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+

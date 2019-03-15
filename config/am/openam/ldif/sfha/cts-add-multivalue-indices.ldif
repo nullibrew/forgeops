@@ -1,0 +1,21 @@
+#
+# Copyright 2016-2018 ForgeRock AS. All Rights Reserved
+#
+# Use of this code requires a commercial software license with ForgeRock AS.
+# or with one of its affiliates. All use shall be exclusively subject
+# to such license between the licensee and ForgeRock AS.
+#
+
+dn: ds-cfg-attribute=coreTokenMultiString01,cn=Index,ds-cfg-backend-id=@DB_NAME@,cn=Backends,cn=config
+objectClass: top
+objectClass: ds-cfg-backend-index
+ds-cfg-attribute: coreTokenMultiString01
+ds-cfg-index-type: equality
+
+dn: ds-cfg-attribute=coreTokenMultiString02,cn=Index,ds-cfg-backend-id=@DB_NAME@,cn=Backends,cn=config
+objectClass: top
+objectClass: ds-cfg-backend-index
+ds-cfg-attribute: coreTokenMultiString02
+ds-cfg-index-type: equality
+
+# coreTokenMultiString03 should not be indexed as it is used to store OAuth2 GrantSet authorizations as JSON.

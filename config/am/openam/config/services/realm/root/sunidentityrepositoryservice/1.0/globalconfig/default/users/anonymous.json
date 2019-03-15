@@ -27,7 +27,7 @@
     "employeeNumber" : null,
     "postalAddress" : null,
     "iplanet-am-user-success-url" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQcbBe7n4+sWWT+w1yvd5iFT9qdKDCK6QS86NgXfTphAy+KDvXyd4U0Z4AFkcOJEChk5ARAgU4Jom5YADR8J8UxznQT44D3/cmANoVT2zH7FqbhTO2LGJUXg==",
+    "userPassword-encrypted" : "AAAAA0FFUwIQMvE+sOK2cDHjl2WrqfC2Da2xivfGbeWx+Qoax7Ltj2EoNywXhdY+Hg9cOx7yYpVXWevGpaYhNr2cxJ+v54ctkq/gDyWNzIHoA9hNK6VrwvyejarR58bUgA==",
     "_id" : "default/users/anonymous",
     "sn" : "anonymous",
     "iplanet-am-user-failure-url" : null

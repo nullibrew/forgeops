@@ -198,6 +198,27 @@
                     </DefaultValues>
                 </AttributeSchema>
 
+                <AttributeSchema name="oauth2-provider-access-token-modification-script"
+                                 type="single_choice"
+                                 uitype="scriptSelect"
+                                 propertiesViewBeanURL="../ui-admin/%23realms/{0}/scripts/edit/{1}"
+                                 syntax="string"
+                                 i18nKey="a104aa"
+                                 resourceName="accessTokenModificationScript"
+                                 order="75">
+                    <ChoiceValues>
+                        <ChoiceValuesClassName className="org.forgerock.openam.scripting.service.ScriptChoiceValues">
+                            <AttributeValuePair>
+                                <Attribute name="ContextId"/>
+                                <Value>OAUTH2_ACCESS_TOKEN_MODIFICATION</Value>
+                            </AttributeValuePair>
+                        </ChoiceValuesClassName>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>d22f9a0c-426a-4466-b95e-d0f125b0d5fa</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+
                 <AttributeSchema name="forgerock-oauth2-provider-oidc-claims-extension-script"
                                  type="single_choice"
                                  uitype="scriptSelect"

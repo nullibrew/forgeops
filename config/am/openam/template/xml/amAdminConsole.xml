@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+   DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  
+    Copyright (c) 2006 Sun Microsystems Inc. All Rights Reserved
+  
+    The contents of this file are subject to the terms
+    of the Common Development and Distribution License
+    (the License). You may not use this file except in
+    compliance with the License.
+
+    You can obtain a copy of the License at
+    https://opensso.dev.java.net/public/CDDLv1.0.html or
+    opensso/legal/CDDLv1.0.txt
+    See the License for the specific language governing
+    permission and limitations under the License.
+
+    When distributing Covered Code, include this CDDL
+    Header Notice in each file and include the License file
+    at opensso/legal/CDDLv1.0.txt.
+    If applicable, add the following below the CDDL Header,
+    with the fields enclosed by brackets [] replaced by
+    your own identifying information:
+    "Portions Copyrighted [year] [name of copyright owner]"
+
+    $Id: amAdminConsole.xml,v 1.5 2009/09/28 19:02:12 babysunil Exp $
+
+    Portions Copyrighted 2015-2017 ForgeRock AS.
+
+-->
+
+
+<!DOCTYPE ServicesConfiguration
+    PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+    "jar://com/sun/identity/sm/sms.dtd">
+
+<ServicesConfiguration>
+    <Service name="iPlanetAMAdminConsoleService" version="1.0">
+        <Schema
+            serviceHierarchy="/DSAMEConfig/iPlanetAMAdminConsoleService"
+            i18nFileName="amAdminConsole"
+            revisionNumber="40"
+            i18nKey="iplanet-am-admin-console-service-description"
+            resourceName="adminconsole">
+
+	    <Global>
+                <AttributeSchema name="iplanet-am-admin-console-liberty-enabled"
+                    type="single"
+                    syntax="boolean"
+                    i18nKey="g100"
+                    order="2700"
+                    resourceName="libertyEnabled">
+                    <BooleanValues>
+                         <BooleanTrueValue i18nKey="i18nTrue">true</BooleanTrueValue>
+                         <BooleanFalseValue i18nKey="i18nFalse">false</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>true</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="xuiAdminConsoleEnabled"
+                                 type="single"
+                                 syntax="boolean"
+                                 i18nKey="">
+                    <DefaultValues>
+                        <Value>true</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-um-enabled"
+                    type="single"
+                    syntax="boolean"
+                    i18nKey="g101"
+                    order="2800">
+                    <BooleanValues>
+                         <BooleanTrueValue i18nKey="i18nTrue">true</BooleanTrueValue>
+                         <BooleanFalseValue i18nKey="i18nFalse">false</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>UM_ENABLED</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+	    </Global>
+
+	    <Organization>
+                <AttributeSchema name="iplanet-am-admin-console-password-reset-enabled"
+                    type="single"
+                    syntax="boolean"
+                    i18nKey="d99"
+                    order="2600"
+                    resourceName="passwordResetEnabled">
+                    <BooleanValues>
+                         <BooleanTrueValue i18nKey="i18nTrue">true</BooleanTrueValue>
+                         <BooleanFalseValue i18nKey="i18nFalse">false</BooleanFalseValue>
+                    </BooleanValues>
+                    <DefaultValues>
+                        <Value>false</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-search-limit"
+                    type="single"
+                    syntax="number_range"
+                    rangeStart="0" rangeEnd="2147483647"
+                    i18nKey="d110"
+                    order="1000"
+                    resourceName="searchLimit">
+		    <DefaultValues>
+			<Value>100</Value>
+		    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-search-timeout"
+                    type="single"
+                    syntax="number_range"
+                    rangeStart="0" rangeEnd="2147483647"
+                    i18nKey="d111"
+                    order="1100"
+                    resourceName="searchTimeout">
+		    <DefaultValues>
+			<Value>5</Value>
+		    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-custom-jsp-dir"
+                    type="single"
+                    syntax="string"
+                    i18nKey="d112"
+                    order="1200">
+		    <DefaultValues>
+			<Value>console</Value>
+		    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-user-search-key"
+                    type="single"
+                    syntax="string"
+                    i18nKey="d115"
+                    order="1500">
+                    <DefaultValues>
+                        <Value>cn</Value>
+		    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-user-return-attribute"
+                    type="single"
+                    syntax="string"
+                    i18nKey="d116"
+                    order="1600"
+                    resourceName="searchReturnAttributes">
+                    <DefaultValues>
+                        <Value>uid cn</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema name="iplanet-am-admin-console-paging-size"
+                    type="single"
+                    syntax="number_range"
+		    rangeStart="1" rangeEnd="2147483647"
+                    i18nKey="d121"
+                    order="2000"
+                    resourceName="pagingSize">
+                    <DefaultValues>
+                        <Value>25</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+	    </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>

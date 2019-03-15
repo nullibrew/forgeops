@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2014-2017 ForgeRock AS. All Rights Reserved
+ 
+  Use of this code requires a commercial software license with ForgeRock AS.
+  or with one of its affiliates. All use shall be exclusively subject
+  to such license between the licensee and ForgeRock AS.
+-->
+
+<!DOCTYPE Policies PUBLIC "-//iPlanet//OpenSSO 2005Q4 Admin CLI DTD//EN" "jar://com/sun/identity/policy/policyAdmin.dtd">
+
+<Policies>
+    <Policy name="AgentAccessToEvaluatePolicies" referralPolicy="false" active="true" >
+        <Rule name="agent-read-access-to-evaluate-policies">
+            <ServiceName name="sunAMDelegationService" />
+            <ResourceName name="sms://*@SM_CONFIG_ROOT_SUFFIX@/rest/1.0/policies/evaluate" />
+            <AttributeValuePair>
+                <Attribute name="READ" />
+                <Value>allow</Value>
+            </AttributeValuePair>
+        </Rule>
+        <Subjects name="Subjects" description="">
+            <Subject name="AuthenticatedAgents" type="AuthenticatedAgents" includeType="inclusive">
+            </Subject>
+        </Subjects>
+    </Policy>
+</Policies>

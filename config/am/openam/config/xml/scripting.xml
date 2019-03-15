@@ -26,6 +26,7 @@
                         <ChoiceValue i18nKey="script-type-03">AUTHENTICATION_CLIENT_SIDE</ChoiceValue>
                         <ChoiceValue i18nKey="script-type-04">OIDC_CLAIMS</ChoiceValue>
                         <ChoiceValue i18nKey="script-type-05">AUTHENTICATION_TREE_DECISION_NODE</ChoiceValue>
+                        <ChoiceValue i18nKey="script-type-06">OAUTH2_ACCESS_TOKEN_MODIFICATION</ChoiceValue>
                     </ChoiceValues>
                     <DefaultValues>
                         <Value>POLICY_CONDITION</Value>
@@ -230,6 +231,7 @@
                                 <ChoiceValue i18nKey="script-type-03">AUTHENTICATION_CLIENT_SIDE</ChoiceValue>
                                 <ChoiceValue i18nKey="script-type-04">OIDC_CLAIMS</ChoiceValue>
                                 <ChoiceValue i18nKey="script-type-05">AUTHENTICATION_TREE_DECISION_NODE</ChoiceValue>
+                                <ChoiceValue i18nKey="script-type-06">OAUTH2_ACCESS_TOKEN_MODIFICATION</ChoiceValue>
                             </ChoiceValues>
                         </AttributeSchema>
                         <AttributeSchema name="createdBy" type="single" syntax="string" i18nKey="script.createdBy" order="1000"/>
@@ -492,6 +494,73 @@
                         </AttributeValuePair>
                     </SubConfiguration>
                 </SubConfiguration>
+                <SubConfiguration name="OAUTH2_ACCESS_TOKEN_MODIFICATION" id="scriptContext">
+                    <AttributeValuePair>
+                        <Attribute name="i18nKey"/>
+                        <Value>script-type-06</Value>
+                    </AttributeValuePair>
+                    <AttributeValuePair>
+                        <Attribute name="defaultScript"/>
+                        <Value>d22f9a0c-426a-4466-b95e-d0f125b0d5fa</Value>
+                    </AttributeValuePair>
+                    <SubConfiguration name="engineConfiguration" id="engineConfiguration">
+                        <AttributeValuePair>
+                            <Attribute name="whiteList"/>
+                            <Value>java.lang.Boolean</Value>
+                            <Value>java.lang.Byte</Value>
+                            <Value>java.lang.Character</Value>
+                            <Value>java.lang.Character$Subset</Value>
+                            <Value>java.lang.Character$UnicodeBlock</Value>
+                            <Value>java.lang.Double</Value>
+                            <Value>java.lang.Float</Value>
+                            <Value>java.lang.Integer</Value>
+                            <Value>java.lang.Long</Value>
+                            <Value>java.lang.Math</Value>
+                            <Value>java.lang.Number</Value>
+                            <Value>java.lang.Object</Value>
+                            <Value>java.lang.Short</Value>
+                            <Value>java.lang.StrictMath</Value>
+                            <Value>java.lang.String</Value>
+                            <Value>java.lang.Void</Value>
+                            <Value>java.util.ArrayList</Value>
+                            <Value>java.util.ArrayList$Itr</Value>
+                            <Value>java.util.Collections$1</Value>
+                            <Value>java.util.Collections$EmptyList</Value>
+                            <Value>java.util.Collections$SingletonList</Value>
+                            <Value>java.util.HashMap</Value>
+                            <Value>java.util.HashMap$Entry</Value>
+                            <Value>java.util.HashMap$KeyIterator</Value>
+                            <Value>java.util.HashMap$Node</Value>
+                            <Value>java.util.HashSet</Value>
+                            <Value>java.util.LinkedHashMap</Value>
+                            <Value>java.util.LinkedHashMap$Entry</Value>
+                            <Value>java.util.LinkedHashMap$LinkedEntryIterator</Value>
+                            <Value>java.util.LinkedHashMap$LinkedEntrySet</Value>
+                            <Value>java.util.LinkedHashSet</Value>
+                            <Value>java.util.LinkedList</Value>
+                            <Value>java.util.TreeMap</Value>
+                            <Value>java.util.TreeSet</Value>
+                            <Value>com.iplanet.sso.providers.dpro.SessionSsoToken</Value>
+                            <Value>com.sun.identity.idm.AMIdentity</Value>
+                            <Value>com.sun.identity.shared.debug.Debug</Value>
+                            <Value>org.codehaus.groovy.runtime.GStringImpl</Value>
+                            <Value>org.codehaus.groovy.runtime.ScriptBytecodeAdapter</Value>
+                            <Value>groovy.json.JsonSlurper</Value>
+                            <Value>org.forgerock.http.client.*</Value>
+                            <Value>org.forgerock.http.protocol.Entity</Value>
+                            <Value>org.forgerock.http.protocol.Request</Value>
+                            <Value>org.forgerock.http.protocol.Response</Value>
+                            <Value>org.forgerock.util.promise.PromiseImpl</Value>
+                            <Value>org.forgerock.oauth2.core.UserInfoClaims</Value>
+                            <Value>org.forgerock.oauth2.core.exceptions.InvalidRequestException</Value>
+                            <Value>org.forgerock.openam.oauth2.OpenAMAccessToken</Value>
+                            <Value>org.forgerock.openidconnect.Claim</Value>
+                            <Value>org.forgerock.openidconnect.ssoprovider.OpenIdConnectSSOToken</Value>
+                            <Value>org.forgerock.openam.scripting.api.http.GroovyHttpClient</Value>
+                            <Value>org.forgerock.openam.scripting.api.http.JavaScriptHttpClient</Value>
+                        </AttributeValuePair>
+                    </SubConfiguration>
+                </SubConfiguration>
                 <SubConfiguration name="globalScripts" id="globalScripts">
                     <SubConfiguration name="9de3eb62-f131-4fac-a294-7bd170fd4acb" id="globalScript">
                         <AttributeValuePair>
@@ -635,6 +704,30 @@
                             <Attribute name="script"/>
                             <ValueFromResources>
                                 <Resource>scripts/authentication-tree-decision-node.js</Resource>
+                            </ValueFromResources>
+                        </AttributeValueFromResources>
+                    </SubConfiguration>
+                    <SubConfiguration name="d22f9a0c-426a-4466-b95e-d0f125b0d5fa" id="globalScript">
+                        <AttributeValuePair>
+                            <Attribute name="name"/>
+                            <Value>OAuth2 Access Token Modification Script</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="description"/>
+                            <Value>Default global script for OAuth2 Access Token Modification</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="context"/>
+                            <Value>OAUTH2_ACCESS_TOKEN_MODIFICATION</Value>
+                        </AttributeValuePair>
+                        <AttributeValuePair>
+                            <Attribute name="language"/>
+                            <Value>GROOVY</Value>
+                        </AttributeValuePair>
+                        <AttributeValueFromResources>
+                            <Attribute name="script"/>
+                            <ValueFromResources>
+                                <Resource>scripts/oauth2-access-token-modification.groovy</Resource>
                             </ValueFromResources>
                         </AttributeValueFromResources>
                     </SubConfiguration>

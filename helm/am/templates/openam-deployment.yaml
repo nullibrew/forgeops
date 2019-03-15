@@ -81,6 +81,10 @@ spec:
         {{ if .Values.devMode }}
         - name: am-config
           mountPath: /home/forgerock/openam
+        # In dev mode on minikube using hostPath mounts, we need to run as root to avoid permission issues.
+        securityContext:
+          runAsUser: 0
+          fsGroup: 0
         {{ end }}
         envFrom:
         - configMapRef:

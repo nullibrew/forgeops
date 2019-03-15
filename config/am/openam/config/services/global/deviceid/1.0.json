@@ -15,7 +15,7 @@
       "deviceIdSettingsEncryptionKeystoreKeyPairAlias" : null,
       "deviceIdSettingsEncryptionKeystore" : "/home/forgerock/openam/am/keystore.jks",
       "deviceIdSettingsEncryptionKeystorePassword" : null,
-      "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ9oKw5oN4vNMzzxUNKm8JJenv/XhM/VU467YRlZMDQaYcxEf8mkiJpw==",
+      "deviceIdSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQ26QWwGrHl1sA/hdgSPbw93DQJCll+i7E0BcYBWPBniMrJO/Zsvo+kg==",
       "deviceIdAttrName" : "devicePrintProfiles",
       "deviceIdSettingsEncryptionKeystoreType" : "JKS",
       "deviceIdSettingsEncryptionKeystorePrivateKeyPassword" : null,

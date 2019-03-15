@@ -1,0 +1,64 @@
+#
+# Copyright 2018 ForgeRock AS. All Rights Reserved
+#
+# Use of this code requires a commercial software license with ForgeRock AS.
+# or with one of its affiliates. All use shall be exclusively subject
+# to such license between the licensee and ForgeRock AS.
+#
+dn: CN=webauthnDeviceProfiles,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+changetype: add
+adminDisplayName: webauthnDeviceProfiles
+cn: webauthnDeviceProfiles
+lDAPDisplayName: webauthnDeviceProfiles
+adminDescription: WebAuthn device profiles
+attributeID: 1.3.6.1.4.1.36733.2.2.1.12
+attributeSyntax: 2.5.5.3
+oMSyntax: 27
+instanceType: 4
+isSingleValued: TRUE
+objectCategory: CN=Attribute-Schema,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+objectClass: attributeSchema
+schemaIDGUID:: +qczgMYESk+gby2dFY5N7Q==
+searchFlags: 0
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=webauthnDeviceProfilesContainer,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+changetype: add
+adminDisplayName: webauthnDeviceProfilesContainer
+adminDescription: Class containing WebAuthn device profiles
+cn: webauthnDeviceProfilesContainer
+governsID: 1.3.6.1.4.1.36733.2.2.2.12
+instanceType: 4
+lDAPDisplayName: webauthnDeviceProfilesContainer
+mayContain: webauthnDeviceProfiles
+objectCategory: CN=Class-Schema,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+objectClass: classSchema
+objectClassCategory: 3
+rDNAttID: cn
+subClassOf: top
+schemaIDGUID:: hqf/WIFDVEKvno+NW0GRqQ==
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,@userStoreRootSuffix@
+changetype: modify
+add: auxiliaryClass
+auxiliaryClass: webauthnDeviceProfilesContainer
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-

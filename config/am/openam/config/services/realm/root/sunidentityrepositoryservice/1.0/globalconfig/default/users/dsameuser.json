@@ -12,7 +12,7 @@
   },
   "data" : {
     "userPassword" : null,
-    "userPassword-encrypted" : "AAAAA0FFUwIQEwsgBpubVPNUvAAooXe2C1fB09/d7E5vhgW2pq+Eba4nnJGIWT5758rXUZXxJ3uHctg2vZ8+evPHjbQa2lqwxr8L5KHYQHoKs5Ov47mn+YXmiptYp5XNkMCI/9mynrFaiOSxjDBOIt61dICKu4A0d5cQLDT+PpuDcNhPzDWo8guIcE7QiKpwME1VnHI2O1rCAbpilja/Ds8/E39fpU3dRz0KBzJVGKd7MuitbepKVhrSXHeIoQxuYIAW1+swtP9OG5Vefgs2uwhLuIMKk5SgmiARsYaPo2yS",
+    "userPassword-encrypted" : "AAAAA0FFUwIQIdPl7yT7fUgkRYV0OomzyB58jK2YxoWbnndSVHIJ9UxBPb8hd2F6V/hFuvM83kXcOhLFzUuKPACRt1R8edhGi2PrQJ6HQtUds/7jMO/jxYDwiDPXPNspBkyLXU01TxkPLHoP8eRbLozC91OzhUEjT1BWoCZXolmJgKP3POu82ANvAcxqt3Fe4ykX7sNaKysXCb2LDrobWGy8zHULu33KliDfGtC0lXIiSdsapJ4nquL5jN/MM37Sgv4gtAySvS0FMPTzQCQHmJj8qxN3X94K93onxXKVUV7v",
     "_type" : {
       "_id" : "sunIdentityRepositoryService",
       "name" : "sunIdentityRepositoryService",

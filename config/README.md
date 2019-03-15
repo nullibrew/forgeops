@@ -14,3 +14,6 @@ cd config
 skaffold dev
 ```
 
+# Outstanding issues to be worked on:
+
+*  See the am/README.md

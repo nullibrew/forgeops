@@ -18,7 +18,7 @@
       "authenticatorOATHDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/am/keystore.jks",
       "authenticatorOATHDeviceSettingsEncryptionKeystoreType" : "JKS",
       "authenticatorOATHDeviceSettingsEncryptionKeystorePassword" : null,
-      "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQOOZkAsdGVxA+2ILu9hOWSJQa+ZJP7AeCMi48IFQ11tmiSbZodp1tbg==",
+      "authenticatorOATHDeviceSettingsEncryptionKeystorePassword-encrypted" : "AAAAA0FFUwIQByuDe7TVmVA3N97IDk5piXXC16j5db76RHL2bDTW+DMMAXFj9j2Kgw==",
       "authenticatorOATHDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
       "authenticatorOATHSkippableName" : "oath2faEnabled"
     },
