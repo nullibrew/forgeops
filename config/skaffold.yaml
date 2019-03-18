@@ -55,3 +55,4 @@ deploy:
         image: gcr.io/engineering-devops/sk-idm
       valuesFiles:
       - helm-common.yaml
+# todo: Create a GKE profile

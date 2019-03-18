@@ -35,7 +35,7 @@ cd forgeops/config
 skaffold run -f skaffold-db.yaml
 ```
 
-### Create a temporate AM home directory mount 
+### Create a temporate AM home directory mount
 
 In a new shell window, run the mount command for minikube, and use an *empty* folder for the AM home.
 The folder needs to be empty otherwise AM will attempt to use the configuration - but will fail to boot
@@ -70,14 +70,19 @@ You can now either copy the new files from tmp/ to openam/, and use those as you
 or restart AM, and using the existing files. At this time, upgrades between snapshots are not supported, and you
 will need to reinstall each time.
 
-You can start up AM against the new openam/ folder.
+### Running AM against an existing idrepo and openam/ folder
+
+Now that the idrepo has been initialized, and you have a basic file based configuration under openam/
+
+First mount the local openam folder on minikube:
 
 ```bash
 # kill the existing minikube mount command..
 minikube mount ./openam:/openam
 ```
 
-You need to `skaffold run` the AM deployment. If you use `skaffold dev` you will 
+
+Next, use `skaffold run` to deploy AM. If you use `skaffold dev` you will
 see an endless loop of AM writing changes to openam/, and skaffold triggering a redeploy.
 Using `run` will avoid the loop:
 
@@ -96,4 +101,17 @@ cd forgeops/config
 skaffold delete -f skaffold.db
 # If you want to blow away the PVC to start fresh:
 kubectl delete pvc db-idrepo-0
+```
+
+### Updating the deployment FQDN in FBC
+
+Eventually this will be supported via commons expressions. For now, your choices are:
+
+* Using your ide, search and replace the FQDN. The site is openam/config/services/realm/root/iplanetamplatformservice/1.0/globalconfig/default/com-sun-identity-sites/site1/accesspoint.json
+* Using a sed command, do the same as above.
+
+Sample sed script (executed in the container, before AM starts)
+```bash
+find /home/forgerock/openam/config -type f -print0 | xargs -0 sed -i -e s/default\.iam\.example\.com/test.iam.example.com/g
+
 ```

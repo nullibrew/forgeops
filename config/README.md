@@ -31,3 +31,6 @@ skaffold dev
 # Outstanding issues to be worked on:
 
 *  See the am/README.md
+*  The fqdn needs to be updated in the embedded AM configuration. Use sed or equivalent for now..
+*  Amster initial import for smoke test config. Take from forgeops-init
+* 

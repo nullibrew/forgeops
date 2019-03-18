@@ -1,4 +1,4 @@
-apiVersion: skaffold/v1beta6
+apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
@@ -10,9 +10,9 @@ deploy:
     releases:
     - name: sk-am
       chartPath: ../../helm/am
+      valuesFiles:
+      - ../helm-common.yaml
       values:
         image: gcr.io/engineering-devops/sk-am
       setValues:
-        devMode: true
-      valuesFiles:
-      - ../helm-common.yaml
+        devMode: "true"
