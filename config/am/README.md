@@ -8,19 +8,19 @@ a separate ctsstore will also be configured.
 
 ## Dev Mode
 
-The AM container can run in "dev" mode or normal mode. In Dev mode,  `minikube mount` is run to mount the openam/
+The AM container can run in "dev" mode or normal mode. In Dev mode,  `minikube mount` is used to mount the openam/
 folder on the containers /home/forgerock/openam.  This allows AM to write back configuration changes to the
 local folder. These are later committed to git for promotion to a QA instance using CI/CD.
 
 In normal mode, the docker image copies in the contents of the folder (COPY) so that the configuration files are part of the image (to simplify things we copy in the configuration in all cases, but in dev mode the folder gets overlayed with the local mount). When the images
 are deployed with CI/CD, `skaffold run` is used to tag the images with a git hash, and to deploy them to a running namespace.
 
-The `devMode: true` flag must be passed in to the helm chart to enable the hostPath mount in the AM container. This is set in the skaffold.yaml file (Q? Do we want two versions of the skaffold file?).
+The `devMode: true` flag must be set in the helm chart to enable the hostPath mount in the AM container. This is set in the skaffold.yaml file (Q? Do we want two versions of the skaffold file?).
 
 
 ## Preparing the idrepo
 
-You must prepare the idrepo instance by doing an amster install. You can not do this currently using file based configuration - the
+You must prepare the idrepo instance with an amster install. You can not do this currently using file based configuration - the
 AM installer must run. Once you have your idrepo prepared, you are advised to retain the PVC between development sessions
 so that you do not have to repeat this procedure.
 
@@ -70,7 +70,7 @@ You can now either copy the new files from tmp/ to openam/, and use those as you
 or restart AM, and using the existing files. At this time, upgrades between snapshots are not supported, and you
 will need to reinstall each time.
 
-You can start up am again agains the new openam/ folder.
+You can start up AM against the new openam/ folder.
 
 ```bash
 # kill the existing minikube mount command..
@@ -78,15 +78,14 @@ minikube mount ./openam:/openam
 ```
 
 You need to `skaffold run` the AM deployment. If you use `skaffold dev` you will 
-see an endless loop of AM writing changes to openam/, and skaffold triggering a redeploy. 
-Using `run` will avoid the looping.
+see an endless loop of AM writing changes to openam/, and skaffold triggering a redeploy.
+Using `run` will avoid the loop:
 
 ```bash
 skaffold run
 # When you are finished, delete the deployment using:
 skaffold delete
 ```
-
 
 
 
