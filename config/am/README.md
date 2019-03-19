@@ -113,5 +113,15 @@ Eventually this will be supported via commons expressions. For now, your choices
 Sample sed script (executed in the container, before AM starts)
 ```bash
 find /home/forgerock/openam/config -type f -print0 | xargs -0 sed -i -e s/default\.iam\.example\.com/test.iam.example.com/g
-
 ```
+
+Sed script, executed locally (Note: for Mac, we use gsed as Mac sed behaves differently)
+```
+find openam/config  -type f -exec gsed -i -e 's/default\.iam\.example\.com/test.iam.forgeops.com/g' {} \;
+# Search for string you just changed
+find openam/config  -type f -print0 | xargs -0 grep test.iam.forgeops.com
+```
+
+Deleting tmp files;
+
+find openam -name \*-e -type f -exec rm {} \;

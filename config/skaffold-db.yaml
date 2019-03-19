@@ -4,7 +4,7 @@
 # skaffold -f skaffold-db.yaml run
 # To cleanup
 # skaffold -f skaffold-db.yaml delete
-apiVersion: skaffold/v1beta6
+apiVersion: skaffold/v1beta7
 kind: Config
 deploy:
   helm:
@@ -17,3 +17,16 @@ deploy:
       chartPath: ../helm/frconfig
       valuesFiles:
       - helm-common.yaml
+profiles:
+- name: test
+  deploy:
+    helm:
+      releases:
+      - name: idrepo
+        chartPath: ../helm/ds
+        setValues:
+          instance: idrepo
+      - name: frconfig
+        chartPath: ../helm/frconfig
+        valuesFiles:
+        - helm-test.yaml

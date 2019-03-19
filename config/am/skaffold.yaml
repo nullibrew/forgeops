@@ -16,3 +16,35 @@ deploy:
         image: gcr.io/engineering-devops/sk-am
       setValues:
         devMode: "true"
+profiles:
+# This profile deploys AM to prep the idrepo. It disables FBC
+- name: prime
+  deploy:
+     helm:
+      flags:
+        install: ['-f', '../helm-test.yaml']
+      releases:
+      - name: sk-am
+        chartPath: ../../helm/am
+        values:
+          image: gcr.io/engineering-devops/sk-am
+        setValues:
+          devMode: "false"
+          catalinaOpts: "-server"
+      - name: sk-amster
+        chartPath: ../../helm/amster
+        values:
+          image: gcr.io/engineering-devops/sk-amster
+# Deploy to the test namespace on GKE
+- name: test
+  deploy:
+    helm:
+      releases:
+      - name: sk-am
+        chartPath: ../../helm/am
+        valuesFiles:
+        - ../helm-test.yaml
+        values:
+          image: gcr.io/engineering-devops/sk-am
+        setValues:
+          devMode: "false"

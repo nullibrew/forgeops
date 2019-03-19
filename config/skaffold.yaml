@@ -18,41 +18,54 @@ build:
     sha256: {}
 deploy:
   helm:
-    # todo: this does not seem to work for setting a global -f 
-    # flags:
-    #   install:
-    #   - "values: helm-common.yaml"
+    flags:
+      #install: [ '-f', 'helm-common.yaml']
+      install: [ '-f', 'helm-test.yaml']
+      upgrade: [ '-f', 'helm-test.yaml']
     releases:
     - name: frconfig
       chartPath: ../helm/frconfig
-      valuesFiles:
-      - helm-common.yaml
     - name: idrepo
       chartPath: ../helm/ds
       setValues:
         instance: idrepo
-    - name: ig
-      chartPath: ../helm/ig
-      values:
-        image: gcr.io/engineering-devops/sk-ig
-      valuesFiles:
-      - helm-common.yaml
     - name: sk-am
       chartPath: ../helm/am
       values:
         image: gcr.io/engineering-devops/sk-am
-      valuesFiles:
-      - helm-common.yaml
     - name: sk-amster
       chartPath: ../helm/amster
       values:
         image: gcr.io/engineering-devops/sk-amster
-      valuesFiles:
-      - helm-common.yaml
-    - name: sk-amster
-      chartPath: ../helm/idm
-      values:
-        image: gcr.io/engineering-devops/sk-idm
-      valuesFiles:
-      - helm-common.yaml
-# todo: Create a GKE profile
+    # - name: sk-idm
+    #   chartPath: ../helm/idm
+    #   values:
+    #     image: gcr.io/engineering-devops/sk-idm
+    # - name: ig
+    #   chartPath: ../helm/ig
+    #   values:
+    #     image: gcr.io/engineering-devops/sk-ig
+profiles:
+# Profile used to initialize the idrepo ds instance with the skeleton AM config. AM file based config
+# needs this to bootstrap. This limitation should be removed shortly.
+- name: init
+  deploy:
+    helm:
+      flags:
+        # Change or update this values yaml for your environment
+        install: ['-f', 'helm-test.yaml']
+      releases:
+      - name: idrepo
+        chartPath: ../helm/ds
+        setValues:
+          instance: idrepo
+      - name: sk-am
+        chartPath: ../helm/am
+        values:
+          image: gcr.io/engineering-devops/sk-am
+        setValues:
+          catalinaOpts: "-server -Dcom.sun.identity.sm.sms_object_filebased_enabled=true"
+      - name: sk-amster
+        chartPath: ../helm/amster
+        values:
+          image: gcr.io/engineering-devops/sk-amster

@@ -101,9 +101,9 @@ spec:
           httpGet:
             path: /am/isAlive.jsp
             port: 8080
-          initialDelaySeconds: 30
+          initialDelaySeconds: 20
           timeoutSeconds: 5
-          periodSeconds: 20
+          periodSeconds: 10
         livenessProbe:
           httpGet:
             path: /am/isAlive.jsp

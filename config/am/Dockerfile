@@ -17,4 +17,4 @@ FROM gcr.io/engineering-devops/am:7.0-FBC-test
 
 # Finally - we copy in our file based config. If you use minikube hostPath overlays in "devMode"
 # This gets overwritten.
-COPY openam /home/forgerock/openam
+COPY --chown=forgerock:root openam /home/forgerock/openam
