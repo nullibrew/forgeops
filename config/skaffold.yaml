@@ -2,7 +2,7 @@
 # skaffold dev 
 # If you quite skaffold, the directory PVC are not deleted. You need to manually delete:
 # kubectl delete pvc --all
-apiVersion: skaffold/v1beta6
+apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
@@ -41,10 +41,10 @@ deploy:
     #   chartPath: ../helm/idm
     #   values:
     #     image: gcr.io/engineering-devops/sk-idm
-    # - name: ig
-    #   chartPath: ../helm/ig
-    #   values:
-    #     image: gcr.io/engineering-devops/sk-ig
+    - name: ig
+      chartPath: ../helm/ig
+      values:
+        image: gcr.io/engineering-devops/sk-ig
 profiles:
 # Profile used to initialize the idrepo ds instance with the skeleton AM config. AM file based config
 # needs this to bootstrap. This limitation should be removed shortly.
@@ -69,3 +69,9 @@ profiles:
         chartPath: ../helm/amster
         values:
           image: gcr.io/engineering-devops/sk-amster
+# Deploy to test namespacec using git commit tags 
+- name: test
+  build:
+    tagPolicy:
+      gitCommit: {}
+          

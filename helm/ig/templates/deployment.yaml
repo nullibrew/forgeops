@@ -57,3 +57,17 @@ spec:
           initialDelaySeconds: 5
         resources:
 {{ toYaml .Values.resources | indent 12 }}
+        {{if .Values.devMode }}
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        #In dev mode on minikube using hostPath mounts, we need to run as root to avoid permission issues.
+        securityContext:
+          runAsUser: 0
+          fsGroup: 0
+      volumes:
+      - name: config
+        hostPath:
+          path: /config
+      {{ end }}
+        

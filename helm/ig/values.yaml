@@ -49,3 +49,5 @@ istio:
 # These values are for the smoke test. TODO: Normalize all IG configs
 healthURI: /kube/liveness
 readinessURI: /kube/readiness
+
+devMode: false

@@ -1,10 +1,15 @@
 # Google Cloud builder script to deploy to GKE using skaffold
 #   machineType: 'N1_HIGHCPU_8'
 timeout: 1000s
+# TODO: Find out how to declare global env vars.
+# env:
+# - 'CLOUDSDK_COMPUTE_ZONE=us-east1-c'
+# - 'CLOUDSDK_CONTAINER_CLUSTER=eng-shared'
+# Todo: Need an all in one skaffold image that includes helm. The one below fails because helm is not installed.
 steps:
-- name: 'gcr.io/$PROJECT_ID/skaffold:alpha'
+- name: 'gcr.io/$PROJECT_ID/skaffold:helm'
   dir: config
-  args: ['run', '-f=skaffold-test.yaml' ]
+  args: ['run', '-f=skaffold.yaml', '--namespace', 'test', '--profile', 'test' ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-east1-c'
   - 'CLOUDSDK_CONTAINER_CLUSTER=eng-shared'

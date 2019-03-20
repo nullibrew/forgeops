@@ -1,4 +1,4 @@
-apiVersion: skaffold/v1beta6
+apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
@@ -8,12 +8,14 @@ build:
 deploy:
   helm:
     releases:
-    - name: sk-ig
+    - name: "sk-ig"
       chartPath: ../../helm/ig
       values:
         image: gcr.io/engineering-devops/sk-ig
       valuesFiles:
       - ../helm-common.yaml
+      setValues:
+        devMode: "true"
 profiles:
   - name: gcb
     build:
