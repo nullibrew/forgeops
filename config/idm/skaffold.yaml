@@ -8,7 +8,7 @@ build:
 deploy:
   helm:
     releases:
-    - name: sk-idm
+    - name: "{{.HELM_PREFIX}}sk-idm"
       chartPath: ../../helm/idm 
       values:
         image: gcr.io/engineering-devops/sk-idm

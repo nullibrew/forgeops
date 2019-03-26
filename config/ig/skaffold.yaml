@@ -8,16 +8,11 @@ build:
 deploy:
   helm:
     releases:
-    - name: "sk-ig"
+    - name: "{{ .HELM_PREFIX}}sk-ig"
       chartPath: ../../helm/ig
       values:
         image: gcr.io/engineering-devops/sk-ig
       valuesFiles:
       - ../helm-common.yaml
       setValues:
-        devMode: "true"
-profiles:
-  - name: gcb
-    build:
-      tagPolicy:
-        gitCommit: {}
+        devMode: "false"

@@ -19,59 +19,58 @@ build:
 deploy:
   helm:
     flags:
-      #install: [ '-f', 'helm-common.yaml']
-      install: [ '-f', 'helm-test.yaml']
-      upgrade: [ '-f', 'helm-test.yaml']
+      install: [ '-f', 'helm-common.yaml']
+      upgrade: [ '-f', 'helm-common.yaml']
     releases:
-    - name: frconfig
+    - name: "{{.HELM_PREFIX}}frconfig"
       chartPath: ../helm/frconfig
-    - name: idrepo
+    - name: "{{.HELM_PREFIX}}idrepo"
       chartPath: ../helm/ds
       setValues:
         instance: idrepo
-    - name: sk-am
+    - name: "{{.HELM_PREFIX}}sk-am"
       chartPath: ../helm/am
       values:
         image: gcr.io/engineering-devops/sk-am
-    - name: sk-amster
+    - name: "{{.HELM_PREFIX}}sk-amster"
       chartPath: ../helm/amster
       values:
         image: gcr.io/engineering-devops/sk-amster
-    # - name: sk-idm
+    # - name: "{{.HELM_PREFIX}}sk-idm
     #   chartPath: ../helm/idm
     #   values:
     #     image: gcr.io/engineering-devops/sk-idm
-    - name: ig
+    - name: "{{.HELM_PREFIX}}ig"
       chartPath: ../helm/ig
       values:
         image: gcr.io/engineering-devops/sk-ig
 profiles:
 # Profile used to initialize the idrepo ds instance with the skeleton AM config. AM file based config
 # needs this to bootstrap. This limitation should be removed shortly.
+# Run this with skaffold run -p init 
 - name: init
   deploy:
     helm:
       flags:
         # Change or update this values yaml for your environment
-        install: ['-f', 'helm-test.yaml']
+        install: ['-f', 'helm-common.yaml']
       releases:
-      - name: idrepo
+      - name: "{{.HELM_PREFIX}}idrepo"
         chartPath: ../helm/ds
         setValues:
           instance: idrepo
-      - name: sk-am
+      - name: "{{.HELM_PREFIX}}sk-am"
         chartPath: ../helm/am
         values:
           image: gcr.io/engineering-devops/sk-am
         setValues:
           catalinaOpts: "-server -Dcom.sun.identity.sm.sms_object_filebased_enabled=true"
-      - name: sk-amster
+      - name: "{{.HELM_PREFIX}}sk-amster"
         chartPath: ../helm/amster
         values:
           image: gcr.io/engineering-devops/sk-amster
-# Deploy to test namespacec using git commit tags 
+# Deploy to test namespace using git commit tags instead of sha256
 - name: test
   build:
     tagPolicy:
       gitCommit: {}
-          

@@ -24,3 +24,4 @@ etc/cert-manager.json
 /venv/
 debug/
 log/
+config/helm-common.yaml

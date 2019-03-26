@@ -12,10 +12,23 @@ The AM container can run in "dev" mode or normal mode. In Dev mode,  `minikube m
 folder on the containers /home/forgerock/openam.  This allows AM to write back configuration changes to the
 local folder. These are later committed to git for promotion to a QA instance using CI/CD.
 
-In normal mode, the docker image copies in the contents of the folder (COPY) so that the configuration files are part of the image (to simplify things we copy in the configuration in all cases, but in dev mode the folder gets overlayed with the local mount). When the images
+In normal mode, the docker build copies in the contents of the folder (COPY) so that the configuration files are part of the image (to simplify things we copy in the configuration in all cases, but in dev mode the folder gets overlayed with the local mount). When the images
 are deployed with CI/CD, `skaffold run` is used to tag the images with a git hash, and to deploy them to a running namespace.
 
-The `devMode: true` flag must be set in the helm chart to enable the hostPath mount in the AM container. This is set in the skaffold.yaml file (Q? Do we want two versions of the skaffold file?).
+The `devMode: true` flag must be set in the helm chart to enable the hostPath mount in the AM container. This can be set in the `skaffold.yaml` file.
+
+By default, devMode is set to false. This provides a better out of box experience for running on GKE (where the host path mounts do not work).
+
+As an alternative to mounting the local folder, `kubectl cp` can be used to copy files from a running AM pod. We would like feedback
+on the use of kubectl vs. host mounting.  The advantage of using kubectl is a simplifed helm charts and common experience across minikube and GKE.
+
+Example of kubectl cp:
+
+``` bash
+# Find the am pod
+kubectl get pod
+kubectl cp sk-am-pod1234:/home/forgerock/openam/am/config  ./tmp
+```
 
 
 ## Preparing the idrepo
