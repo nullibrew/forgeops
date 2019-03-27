@@ -9,10 +9,6 @@
 # and replace the secrets in ./secrets with your own.
 useDefaultSecrets: true
 
-# The default DS baseDN for the user store.  Note the ds image creates several backends that are hard coded and this
-# setting will have no impact on those backends. This setting will be removed in the future.
-baseDN: "ou=identities"
-
 # The default instance name. This will create a stateful set that can be resolved at
 #  $instance-0.$instance. You can also use the service name $instance - which will get (randomly)
 # load balanced to an instance (not recommended )
@@ -35,10 +31,12 @@ idmRepo:
   enabled: true
 
 image:
-  repository: forgerock-docker-public.bintray.io/forgerock/ds
-  #pullPolicy: IfNotPresent
-  pullPolicy: Always
-  tag: 7.0.0-SNAPSHOT
+  #repository: gcr.io/forgerock-io/ds/docker-build
+  repository: gcr.io/forgerock-io/ds
+  #pullPolicy: Always
+  pullPolicy: IfNotPresent
+  tag: 6.5.1
+  #tag: latest
 
 # The number of instances in the StatefulSet. Each instance is a combined DS/RS pair.
 # You can not change this after installation.

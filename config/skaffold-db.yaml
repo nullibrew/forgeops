@@ -13,6 +13,10 @@ deploy:
       chartPath: ../helm/ds
       setValues:
         instance: idrepo
+    - name: "{{.HELM_PREFIX}}cts"
+      chartPath: ../helm/ds
+      setValues:
+        instance: cts
     - name: "{{.HELM_PREFIX}}frconfig"
       chartPath: ../helm/frconfig
       valuesFiles:

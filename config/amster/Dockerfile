@@ -1,3 +1,3 @@
-FROM forgerock-docker-public.bintray.io/forgerock/amster:7.0.0-SNAPSHOT
+FROM gcr.io/forgerock-io/amster/qa-smoke:latest
 
 COPY  --chown=forgerock . /opt/amster
