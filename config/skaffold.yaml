@@ -52,7 +52,6 @@ profiles:
   deploy:
     helm:
       flags:
-        # Change or update this values yaml for your environment
         install: ['-f', 'helm-common.yaml']
       releases:
       - name: "{{.HELM_PREFIX}}idrepo"
@@ -74,3 +73,10 @@ profiles:
   build:
     tagPolicy:
       gitCommit: {}
+# Additional profiles can be added here for the various t-shirt sizes.
+- name: large
+  deploy:
+    helm:
+      flags:
+        install: ['-f', 'helm-common.yaml']
+        

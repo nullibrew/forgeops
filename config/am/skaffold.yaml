@@ -17,7 +17,7 @@ deploy:
       setValues:
         devMode: "false"
 profiles:
-# This profile deploys AM and amster to prep the idrepo. It disables FBC
+# This profile deploys AM and amster to prep the idrepo. It disables File Based Config (FBC)
 - name: prime
   deploy:
      helm:
