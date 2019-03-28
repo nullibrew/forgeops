@@ -33,11 +33,8 @@ idmRepo:
 image:
   repository: gcr.io/forgerock-io/ds/docker-build
   #repository: gcr.io/forgerock-io/ds
-  #pullPolicy: Always
   pullPolicy: IfNotPresent
-  #tag: 6.5.1
-  tag: latest
-
+  tag: 7.0.0-98f5024
 # The number of instances in the StatefulSet. Each instance is a combined DS/RS pair.
 # You can not change this after installation.
 replicas: 1
