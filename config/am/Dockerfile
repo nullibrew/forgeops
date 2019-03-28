@@ -1,8 +1,8 @@
 
 # This is an experimental FBC image created March 15
-FROM gcr.io/engineering-devops/am:7.0-FBC-test
+#FROM gcr.io/engineering-devops/am:7.0-FBC-test
 # Nightly build
-#FROM gcr.io/forgerock-io/am/docker-build:latest
+FROM gcr.io/forgerock-io/am/docker-build:latest
 
 # This is an image that results from a local build using mvn and minikube:
 # cd openam-src/openam-docker; mvn docker:build 

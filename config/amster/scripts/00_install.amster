@@ -20,10 +20,11 @@ install-openam \
    --adminPwd amadminPassword \
    --cfgStore dirServer \
    --cfgStoreHost idrepo \
+   --cfgStoreDirMgr uid=admin \
    --cfgStoreDirMgrPwd password \
    --cfgStorePort 1389 \
    --cfgStoreRootSuffix "ou=am-config" \
-   --userStoreDirMgr "cn=Directory Manager" \
+   --userStoreDirMgr "uid=admin" \
    --userStoreDirMgrPwd  "password" \
    --userStoreHost "idrepo" \
    --userStorePort 1389 \
