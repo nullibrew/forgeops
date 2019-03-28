@@ -79,4 +79,36 @@ profiles:
     helm:
       flags:
         install: ['-f', 'helm-common.yaml']
-        
+# A "dev" instance where the data in ds is ephemeral - goes away after each install.  
+- name: dev
+  deploy:
+    helm:
+      flags:
+        install: [ '-f', 'helm-common.yaml']
+        upgrade: [ '-f', 'helm-common.yaml']
+      releases:
+      - name: "{{.HELM_PREFIX}}frconfig"
+        chartPath: ../helm/frconfig
+      - name: "{{.HELM_PREFIX}}idrepo"
+        chartPath: ../helm/ds
+        setValues:
+          instance: idrepo
+          persistence: false
+      - name: "{{.HELM_PREFIX}}sk-am"
+        chartPath: ../helm/am
+        values:
+          image: gcr.io/engineering-devops/sk-am
+        setValues:
+          catalinaOpts: "-server -Dcom.sun.identity.sm.sms_object_filebased_enabled=true"
+      - name: "{{.HELM_PREFIX}}sk-amster"
+        chartPath: ../helm/amster
+        values:
+          image: gcr.io/engineering-devops/sk-amster
+      - name: "{{.HELM_PREFIX}}sk-idm"
+        chartPath: ../helm/idm
+        values:
+          image: gcr.io/engineering-devops/sk-idm
+      - name: "{{.HELM_PREFIX}}ig"
+        chartPath: ../helm/ig
+        values:
+          image: gcr.io/engineering-devops/sk-ig

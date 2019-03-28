@@ -8,7 +8,7 @@ openidm:
   repo:
     host: idrepo
     port: 1389
-    user: "cn=Directory Manager"
+    user: "uid=admin"
     password: password
 
 # We can use this to control whether products attempt to write config changes 
