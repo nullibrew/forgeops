@@ -30,6 +30,7 @@ spec:
         - configMapRef:
             name:  {{ default "frconfig" .Values.config.name  }}
       {{ end }}
+      {{ if eq .Values.config.external  true }}
       # The init containers below should be removed once file based configuration is in place.
       - name: wait-for-configstore
         image: {{ .Values.utilImage.repository }}:{{ .Values.utilImage.tag }}
@@ -51,6 +52,7 @@ spec:
         - name: configstore-secret
           mountPath: /var/run/secrets/configstore
         args:  ["bootstrap"]
+       {{ end }}
       containers:
       - name: openam
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
@@ -59,12 +61,14 @@ spec:
         - containerPort: 8080
           name: http
         volumeMounts:
+        {{ if eq .Values.config.external  true }}
         - name: openam-root
           mountPath: /home/forgerock/openam
         - name: configstore-secret
           mountPath: /var/run/secrets/configstore
         - name: openam-secrets
           mountPath: /var/run/secrets/openam/keystore
+        {{ end }}
         - name: openam-pstore-secrets
           mountPath: /var/run/secrets/openam/password
         {{ if eq .Values.config.strategy  "git" }}
@@ -72,7 +76,8 @@ spec:
           mountPath: /git
         {{ end }}
         {{ if .Values.useConfigMapWebxml }}
-        - mountPath: /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml
+        #- mountPath: /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml
+        - mountPath: /usr/local/tomcat/webapps/openam/WEB-INF/web.xml
           name: webxml
           subPath: webxml
         {{ end }}
@@ -93,14 +98,14 @@ spec:
         # For slow environments like Minikube you need to give OpenAM time to come up.
         readinessProbe:
           httpGet:
-            path: /isAlive.jsp
+            path: {{ .Values.serverURI }}/isAlive.jsp
             port: 8080
           initialDelaySeconds: 30
           timeoutSeconds: 5
           periodSeconds: 20
         livenessProbe:
           httpGet:
-            path: /isAlive.jsp
+            path: {{ .Values.serverURI }}/isAlive.jsp
             port: 8080
           initialDelaySeconds: 30
           timeoutSeconds: {{ .Values.livenessTimeout }}
@@ -124,14 +129,12 @@ spec:
           name: webxml
         name: webxml
       {{ end }}
+      {{ if eq .Values.config.external  true }}
       - name: openam-root
         emptyDir: {}
       - name: openam-secrets
         secret:
           secretName: openam-secrets
-      - name: openam-pstore-secrets
-        secret:
-          secretName: openam-pstore-secrets
       - name: openam-boot
         configMap:
           name: boot-json
@@ -139,6 +142,7 @@ spec:
         secret:
           secretName: configstore
           #defaultMode: 256
+      {{ end }}
       {{ if eq .Values.config.strategy  "git" }}
       - name: git
         emptyDir: {}
@@ -146,3 +150,6 @@ spec:
         secret:
           secretName:  {{ default "frconfig" .Values.config.name }}
       {{ end }}
+      - name: openam-pstore-secrets
+        secret:
+          secretName: openam-pstore-secrets

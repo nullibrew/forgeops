@@ -10,4 +10,5 @@ echo "AM customization script"
 
 env
 
+$CONFIG_PATH/bin/config_am.sh
 

@@ -7,12 +7,21 @@ FROM forgerock/downloader
 ARG VERSION="6.5.0"
 RUN download -v $VERSION openam 
 RUN mkdir -p /var/tmp/openam && unzip -q /openam.war -d /var/tmp/openam
+RUN mkdir -p /var/tmp/ssoadmintools && unzip -o /ssoadmintools.zip -d /var/tmp/ssoadmintools
 
 FROM tomcat:8.5-alpine
 
+ENV FORGEROCK_HOME /home/forgerock
+ENV OPENAM_HOME /home/forgerock/openam
+
+RUN apk update && apk  add --no-cache --quiet gettext
+
 RUN rm -fr "$CATALINA_HOME"/webapps/*
 
-COPY --from=0 /var/tmp/openam "$CATALINA_HOME"/webapps/ROOT
+#COPY --from=0 /var/tmp/openam "$CATALINA_HOME"/webapps/ROOT
+COPY --from=0 /var/tmp/openam "$CATALINA_HOME"/webapps/am
+COPY --from=0 /var/tmp/ssoadmintools "$FORGEROCK_HOME"/ssoadmintools
+COPY --from=0 /ssoadmintools.zip "$FORGEROCK_HOME"/ssoadmintools.zip
 
 #ENV CATALINA_OPTS -server -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
 # Option for setting the AM home directory:
@@ -37,8 +46,6 @@ ENV CATALINA_OPTS -server -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryL
 
 #  -Dcom.iplanet.services.debug.level=error
 
-ENV FORGEROCK_HOME /home/forgerock
-ENV OPENAM_HOME /home/forgerock/openam
 
 # Note that we are adding the forgerock user to the root group - which is consistent with OpenShift.
 # This is a work around for: https://github.com/docker-library/tomcat/issues/35
@@ -47,7 +54,7 @@ RUN apk add --no-cache su-exec unzip curl bash tini \
   && adduser -s /bin/bash -h "$FORGEROCK_HOME" -u 11111 -D forgerock -G root \
   && mkdir -p "$OPENAM_HOME" \
   && mkdir -p "$FORGEROCK_HOME"/.openamcfg \
-  && echo "$OPENAM_HOME" >  "$FORGEROCK_HOME"/.openamcfg/AMConfig_usr_local_tomcat_webapps_ROOT_  \
+  && echo "$OPENAM_HOME" >  "$FORGEROCK_HOME"/.openamcfg/AMConfig_usr_local_tomcat_webapps_am_  \
   && chown -R forgerock:root "$CATALINA_HOME" \
   && chown -R forgerock:root  "$FORGEROCK_HOME" \
   && chmod -R g+rwx "$CATALINA_HOME"
